@@ -12,6 +12,13 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    firebase: {
+      apiKey: "AIzaSyADb-e1UmrK3mqrvlI9v42Qx74t9-dHKts",
+      authDomain: "parking-lot-59965.firebaseapp.com",
+      databaseURL: "https://parking-lot-59965.firebaseio.com",
+      storageBucket: "parking-lot-59965.appspot.com",
+      messagingSenderId: "761626888064"
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -21,10 +28,10 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
