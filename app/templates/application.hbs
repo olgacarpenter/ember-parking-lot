@@ -1,1 +1,16 @@
-{{outlet}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {{input type="text" value=newLotName size="50"}}
+            {{input type="text" value=smSpaces size="50"}}
+            {{input type="text" value=mdSpaces size="50"}}
+            {{input type="text" value=lgSpaces size="50"}}
+            <button class="btn btn-primary" {{action 'addNewLot' newLotName smSpaces mdSpaces lgSpaces}}>Add Lot</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {{outlet}}
+        </div>
+    </div>
+</div>
