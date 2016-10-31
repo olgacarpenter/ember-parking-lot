@@ -1,9 +1,49 @@
-<h1>Parking Lot</h1>
+<header>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">{{model.name}}</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <button class="btn btn-default navbar-btn" title="Add motorcycle" {{action 'addVehicleToLot' 1}}>{{fa-icon "motorcycle"}}</button>
+            <button class="btn btn-default navbar-btn" title="Add sedan" {{action 'addVehicleToLot' 2}}>{{fa-icon "car"}}</button>
+            <button class="btn btn-default navbar-btn" title="Add truck" {{action 'addVehicleToLot' 3}}>{{fa-icon "truck"}}</button>
+            <!--<button class="btn btn-primary navbar-btn" title="Add truck" {{action 'addNewLot' 'Rainmaker Parking Lot' 4 4 4}}>Add Spaces</button>-->
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+</header>
 
-
-{{#each model as |lot|}}
-{{lot.name}} - {{lot.spaces.length}}
-    {{#each lot.spaces as |space|}}
-        {{space.size}}
-    {{/each}}
-{{/each}}
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="lead">In Queue</p>
+                <ul class="list-unstyled queue">
+                    {{#each model.queue as |qVehicle|}}
+                        <li>{{vehicle-icon vehicleType=qVehicle.type}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div class="parking-lot">
+                    <div class="row">
+                    {{#each model.spaces as |space index|}}
+                        <span class="clickable" title="Remove Vehicle" {{action 'removeVehicleFromLot' space}}>
+                            {{parking-space space=space vehicle=space.vehicle}}
+                        </span>
+                    {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

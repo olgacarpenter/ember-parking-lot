@@ -1,1 +1,41 @@
 @import 'bootstrap';
+
+body {
+    background-color: #181818;
+    color: #fff;
+}
+header {
+    background-color: #020202;
+}
+
+.parking-lot {
+    background-color: #222222;
+    //border: 
+}
+main > .container {
+    padding: 20px;
+}
+.space-1 {
+    font-size: 70px;
+    min-height: 110px;
+    border: solid 3px #9a1c1f;
+}
+.space-2 {
+    font-size: 70px;
+    min-height: 110px;
+    border: solid 3px #ae812c;
+}
+.space-3 {
+    font-size: 70px;
+    min-height: 110px;
+    border: solid 3px #136e86;
+}
+.space-size {
+    font-size: 14px;
+}
+.clickable {
+    cursor: pointer;
+}
+.queue {
+    font-size: 50px;
+}
